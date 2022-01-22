@@ -1,5 +1,5 @@
-const { ApolloServer } = require('apollo-server')
-const { gql } = require('graphql-tag')
+import { ApolloServer } from "apollo-server"
+import gql from "graphql-tag"
 
 const typedefsDemo = gql`
    type User {
