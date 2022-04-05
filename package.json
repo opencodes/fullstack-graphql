@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "ts-node ./src/index.ts",
+    "start": "node ./src/index.js",
     "dev": "nodemon ./src/index.ts"
   },
   "repository": {
@@ -22,12 +22,7 @@
   "dependencies": {
     "apollo-server": "^3.6.2",
     "graphql": "^16.2.0",
-    "graphql-tag": "^2.12.6"
-  },
-  "devDependencies": {
-    "@types/node": "^17.0.8",
-    "nodemon": "^2.0.15",
-    "ts-node": "^10.4.0",
-    "typescript": "^4.5.4"
+    "graphql-tag": "^2.12.6",
+    "sqlite": "^4.0.25"
   }
 }
