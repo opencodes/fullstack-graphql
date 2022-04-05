@@ -15,15 +15,15 @@ const typeDefs = gql`
         order(id: ID!): Order
     }
     type Mutation {
-        updateStatus(id: ID!, status: Status): [Order]
+        updateStatus(id: ID!, status: Status): Order
     }
     type Order {
-        id: ID!
+        id: String!
         total:Float!
         discountCode: String
         comment: String
         items:String!
-        status: Status!
+        status: String!
         deliveryAddress: String!
     }
 `;

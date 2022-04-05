@@ -11,11 +11,9 @@ const resolvers = {
                 });
             }
             const data = await dataSources.db.getOrder(`${id}`);
-            console.log(data)
-            return data
+            return data;
         },
         orders: async (_, { status }, { dataSources }) => {
-            let data;
             if (status) {
                 if (!['PENDING',
                     'IN_PROGESS',
@@ -27,11 +25,10 @@ const resolvers = {
                     });
                 }
                 const query = `SELECT * FROM orders WHERE status='${status}'`;
-                data = await dataSources.db.executeQuery(query);
+                return await dataSources.db.executeQuery(query);
             } else {
-                data = await dataSources.db.getOrders();
+                return await dataSources.db.getOrders();
             }
-            return data;
         },
     },
     Mutation: {
@@ -51,8 +48,9 @@ const resolvers = {
                 });
             }
             await dataSources.db.updateOrderStatus(id, status);
-            const dataOne = await dataSources.db.getOrder(id);
-            return dataOne;
+            const dataOne = await dataSources.db.getOrder(`${id}`);
+            return dataOne
+
         }
     }
 };
